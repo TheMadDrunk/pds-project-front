@@ -54,10 +54,13 @@ function App() {
   }
   return (
     <div className="container w-50">
-      <h2 className="text-primary" ><span onClick={prevForm} style={{cursor:"pointer"}} className="m-1 font-weight-bold" >{"<"}</span>{`Step ${step} : ${formSteps[step-1].title}`}</h2>
-      {step === 1 && <LigneForm nextForm={nextForm} form={formState} setForm={setFormState}/>}
-      {step === 2 && <SecteurForm nextForm={nextForm} setForm={setFormState} form={formState}/>}
-      {step === 3 && <ControleForm nextForm={submitForm} setForm={setFormState} form={formState}/>}
+      <div className="card m-5 p-5">
+
+        <h1 className="text-blue title" ><span onClick={prevForm} style={{cursor:"pointer"}} className="m-1 font-weight-bold" >{"<"}</span>{`Step ${step} : ${formSteps[step-1].title}`}</h1>
+        {step === 1 && <LigneForm nextForm={nextForm} form={formState} setForm={setFormState}/>}
+        {step === 2 && <SecteurForm nextForm={nextForm} setForm={setFormState} form={formState}/>}
+        {step === 3 && <ControleForm nextForm={submitForm} setForm={setFormState} form={formState}/>}
+      </div>
     </div>
   )
 }
